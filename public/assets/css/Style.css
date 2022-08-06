@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+
+.chessboard{
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    box-shadow: 10px 0px 10px -10px rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+}
+
+.chessboard > .chessboard-square{
+    width: calc(500px / 8);
+    height: calc(500px / 8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chessboard > .chessboard-square[role="white"]{
+    background: #BB9979;
+}
+
+.chessboard > .chessboard-square[role="black"]{
+    background: #3A1A0C;
+}
+
+.chessboard > .chessboard-square:nth-child(1){
+    border-top-left-radius: 25px;
+}
+
+.chessboard > .chessboard-square:nth-child(8){
+    border-top-right-radius: 25px;
+}
+
+.chessboard > .chessboard-square:nth-child(57){
+    border-bottom-left-radius: 25px;
+}
+
+.chessboard > .chessboard-square:nth-child(64){
+    border-bottom-right-radius: 25px;
+}
+
+.chessboard > .chessboard-square::before{
+    content: "";
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #BEC5A3;
+    position: absolute;
+    opacity: 0.50;
+    visibility: hidden;
+}
+
+.chessboard > .chessboard-square.move::before{
+    visibility: visible;
+}
+
+.chessboard > .chessboard-square.enemy::before{
+    visibility: visible;
+}
+
+.chessboard > .chessboard-square.castling::before{
+    visibility: visible;
+}
+
+.chessboard > .chessboard-square.from{
+    background: #bd5c6c; 
+}
+
+.chessboard > .chessboard-square.to{
+    background: #e27587;
+}
+
+.chessboard > .chessboard-square > img.chessboard-piece{
+    max-width: 50px;
+    width: 50px;
+    height: auto;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.chessboard > .chessboard-square > img.chessboard-piece:active{
+    cursor: grabbing;
+}
+
+.player-card{
+    padding: 2.5px 25px;
+    display: flex;
+    position: relative;
+}
+
+.player-card > .rows{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.player-card > .row-1{
+    cursor: pointer;
+    border-radius: 6px;
+    margin:2.5px;
+}
+
+.player-card > .row-1 > .icon {
+    width:30px;
+    height:30px;
+    margin: 5px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.player-card > .row-1 > .text{
+    margin: 0px 5px;
+    color: #ffffff;
+}
+
+.player-card > .row-1 > .text > .status span{
+    font-size: 12px;
+}
+
+.player-card.player-1 > .row-1{
+    justify-content: flex-end;
+}
+
+.player-card.player-2 > .row-2{
+    justify-content: flex-end;
+}
+
+.player-card.player-1 > .row-2 > .timer{
+    text-align: left;
+}
+
+.player-card.player-2 > .row-2 > .timer{
+    text-align: right
+}
+
+.player-card > .row-2 > .timer{
+    padding: 10px;
+    background: #52504E;
+    border-radius: 6px;
+    margin: 5px 0px;
+    width: 80px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.player-card > .row-2 > .timer > span{
+    color: #ebeeee;
+    font-weight: 600;
+    font-size: 18px;
+    user-select: none;
+}
+
+.player-card > .row-2 > .timer.timeout{
+    background: #9E4F4C;
+}
+
+.player-card > .row-2 > .timer > span{
+    color: #ffffff;
+    font-weight: 600;
+}
+
+  .project-pic {
+    background-color: #3A1A0C;
+  }
+  
+  .pic {
+    position: absolute;
+    width: 83px;
+    height: 83px;
+    left: 63px;
+    top: 12px;
+    background-color: #3A1A0C;
+  }
+  
+  .pic img {
+    width: 100%;
+    height: 100%;
+    background-color: #3A1A0C;
+  }
+  
+  .thenav {
+    position: absolute;
+    width: 50%;
+    height: 44.59px;
+    left: 603px;
+    top: 36px;
+    background: #3A1A0C;
+    border-radius: 14px;
+  }
+  
+  .thenav ul li {
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: medium;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+  }
+  
+  .thenav ul li a {
+    color: #BB9979;
+  }
+  
+  .home {
+    width: 25%;
+  }
+  .rules{
+    background-color: #3A1A0C;
+    color: #BB9979;
+    border-radius: 20px;
+    font-size: large;
+    padding:50px;
+  
+    margin-left: 150px;
+  
+  }
+  .rules h2{
+    font-size: larger;
+  }
+  .thenavbar{
+    padding-bottom: 100px;
+    background-color: #BB9979 ;
+  }
+  .board{
+    background-color: #BB9979 ;
+    padding-top: 100px;
+  }
+  .Choose{
+    margin-top: 30px;
+    background-color: #3A1A0C;
+    color: #BB9979;
+    border-radius: 25px;
+    margin-left: 70px;
+    
+  }
+  .choose-text{
+    padding-bottom: 20px;
+    color: #BB9979;
+    font-size: larger;
+    padding-top: 20px;
+    
+  }
+  .Choose h2{
+    font-size: larger;
+  }
+  .button-right button {
+    background-color: #3A1A0C; 
+    margin: 20px; 
+    border-radius: 25px;
+    margin-left: 100px;
+  }
+  .button-left button{
+    background-color: #3A1A0C;
+    margin: 20px; 
+    border-radius: 25px;
+  }
+
