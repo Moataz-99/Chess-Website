@@ -10,7 +10,7 @@ Technologies used in the development process
  * Bootstrap(used some of Bootstrap classes)
  * Node.js (To build an restfulAPI)
  * ExpressJS (to handle my HTTPS requests)
- * MongoDB(the DataBase)
+ * MongoDB (the DataBase)
 
 
 Discreption 
